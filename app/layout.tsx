@@ -3,6 +3,7 @@ import MainNavbar from "../components/navbar/MainNavbar";
 import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "NextLevel Food",
@@ -27,19 +28,21 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <MainNavbar />
-          <div className="container">
-            <div className="flex flex-col justify-center items-center">
-              {children}
+        <Provider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <MainNavbar />
+            <div className="container">
+              <div className="flex flex-col justify-center items-center">
+                {children}
+              </div>
             </div>
-          </div>
-        </ThemeProvider>
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );

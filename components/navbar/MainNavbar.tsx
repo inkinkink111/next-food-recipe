@@ -9,6 +9,7 @@ import MainHeaderBackground from "./MainHeaderBackground";
 import NavLinks from "./NavLinks";
 
 import { Menu, X } from "lucide-react";
+import SigninButton from "../SigninButton";
 
 const MainNavbar = () => {
   const [navOpen, isNavOpen] = useState(false);
@@ -44,6 +45,7 @@ const MainNavbar = () => {
               <li>
                 <NavLinks href={"/community"}>Community</NavLinks>
               </li>
+              <SigninButton></SigninButton>
             </ul>
           </nav>
         </div>
